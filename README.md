@@ -1,1 +1,1 @@
-*** Code written while following "The Book" for Rust ***
+Code written while following "The Book" for Rust
