@@ -28,18 +28,29 @@ fn main() {
 
 fn compute_nth_fib_number(n: i32) -> i64 {
     // 0, 1, 1, 2, 3, 5, 8, 13 ...
+
     if n == 1 {
+        println!("Previous fib numbers: 0");
         return 0;
     } else if n == 2 {
+        println!("Previous fib numbers: 0, 1");
         return 1;
     }
 
-    let mut current_index = 3;
+    let mut current_index: usize = 3;
     let mut previous_fib = 0;
     let mut current_fib = 1;
-    let mut next_fib = previous_fib + current_fib;
+    let mut next_fib: i64 = previous_fib + current_fib;
 
-    while current_index != n {
+    print!("Previous fib numbers: 0, 1, ");
+
+    while current_index != n as usize {
+        if current_index == n as usize - 1 {
+            print!("{next_fib}\n");
+        } else {
+            print!("{next_fib}, ");
+        }
+
         previous_fib = current_fib;
         current_fib = next_fib;
         next_fib = previous_fib + current_fib;
